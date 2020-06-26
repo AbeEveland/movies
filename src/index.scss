@@ -1,0 +1,217 @@
+@import 'bootstrap';
+:root {
+  font: 16px / 1 sans-serif;
+}
+
+.container {
+  width: 500px;
+}
+.lead {
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.jumbotron {
+  border: thin solid;
+  background-color: rgb(139, 145, 139);
+  border-color: #000000;
+  border-width: 5px;
+}
+.list-group-item.active {
+  z-index: 2;
+  color: rgb(85, 79, 79);
+  border-color: rgb(129, 190, 247);
+  border-radius: 0.8em;
+  background-color: rgb(184, 33, 139);
+  border-width: 1.5px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Coda+Caption:800');
+
+html,
+body {
+  background: hsl(220, 70%, 30%);
+  background-image: url(https://i.pinimg.com/564x/b4/31/c0/b431c040f7aa691c71d88bce347747d5.jpg);
+}
+html {
+  height: 100%;
+  display: flex;
+}
+body {
+  margin: auto;
+}
+
+/*
+  You can adjust the
+    * rotation (rotateX),
+    * vertical stretch (scaleY),
+    * projection (perspective) and
+    * layer depth (--layer-depth)
+*/
+.title {
+  text-align: center;
+  font-family: 'Coda Caption', sans-serif;
+  font-weight: 800;
+  font-size: calc(
+    20vw / var(--word-total)
+  ); /* Overriden below for fluid typography test */
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transform: perspective(250px) scaleY(2) rotateX(-45deg);
+  transform-style: preserve-3d; /* Important for establishing a shared 3D space for all the layers */
+  --layer-depth: 0.32em;
+  animation: blink 1s steps(2, start) infinite;
+  padding-bottom: 40px;
+  padding-top: 80px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: rgb(243, 191, 46);
+  --min-font-size: 44;
+  --max-font-size: 68;
+  font-size: calc(var(--min-font-size) * 1px);
+  font-size: calc(
+    ((var(--line-index) + 1) * 25%) + 50%
+  ); /* We skew font-sizes to avoid emphasize on the top, due to perspective rotation */
+  text-shadow: 0.06em 0 black, 0.06em 0.06em black, 0 0.06em black,
+    -0.06em 0.06em black, -0.06em 0 black, -0.06em -0.06em black,
+    0 -0.06em black, 0.06em -0.06em black;
+  transform-style: preserve-3d; /* Important as above, we need to make sure the pseudos share the same 3D space */
+
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .title {
+    font-size: calc(
+      var(--min-font-size) * 1px + (var(--max-font-size) - var(--min-font-size)) *
+        ((100vw - 320px) / 680)
+    );
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .title {
+    font-size: calc(var(--max-font-size) * 1px);
+  }
+}
+.movietitle {
+  text-align: center;
+  font-family: 'Coda Caption', sans-serif;
+  font-weight: 800;
+  font-size: calc(
+    20vw / var(--word-total)
+  ); /* Overriden below for fluid typography test */
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transform: perspective(250px) scaleY(2) rotateX(-45deg);
+  transform-style: preserve-3d; /* Important for establishing a shared 3D space for all the layers */
+  --layer-depth: 0.32em;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: rgb(243, 191, 46);
+  --min-font-size: 10;
+  --max-font-size: 10;
+  font-size: calc(var(--min-font-size) * 1px);
+  font-size: calc(
+    ((var(--line-index) + 1) * 25%) + 50%
+  ); /* We skew font-sizes to avoid emphasize on the top, due to perspective rotation */
+  text-shadow: 0.06em 0 black, 0.06em 0.06em black, 0 0.06em black,
+    -0.06em 0.06em black, -0.06em 0 black, -0.06em -0.06em black,
+    0 -0.06em black, 0.06em -0.06em black;
+  transform-style: preserve-3d; /* Important as above, we need to make sure the pseudos share the same 3D space */
+}
+@media screen and (min-width: 320px) {
+  .titles {
+    font-size: calc(
+      var(--min-font-size) * 1px + (var(--max-font-size) - var(--min-font-size)) *
+        ((100vw - 320px) / 680)
+    );
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .titles {
+    font-size: calc(var(--max-font-size) * 1px);
+  }
+}
+.movietitle {
+  text-align: center;
+  font-family: 'Coda Caption', sans-serif;
+  font-weight: 800;
+  font-size: calc(
+    20vw / var(--word-total)
+  ); /* Overriden below for fluid typography test */
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transform: perspective(250px) scaleY(2) rotateX(-45deg);
+  transform-style: preserve-3d; /* Important for establishing a shared 3D space for all the layers */
+  --layer-depth: 0.32em;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: rgb(243, 191, 46);
+  --min-font-size: 10;
+  --max-font-size: 10;
+  font-size: calc(var(--min-font-size) * 1px);
+  font-size: calc(
+    ((var(--line-index) + 1) * 25%) + 50%
+  ); /* We skew font-sizes to avoid emphasize on the top, due to perspective rotation */
+  text-shadow: 0.06em 0 black, 0.06em 0.06em black, 0 0.06em black,
+    -0.06em 0.06em black, -0.06em 0 black, -0.06em -0.06em black,
+    0 -0.06em black, 0.06em -0.06em black;
+  transform-style: preserve-3d; /* Important as above, we need to make sure the pseudos share the same 3D space */
+}
+@media screen and (min-width: 320px) {
+  .titles {
+    font-size: calc(
+      var(--min-font-size) * 1px + (var(--max-font-size) - var(--min-font-size)) *
+        ((100vw - 320px) / 680)
+    );
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .titles {
+    font-size: calc(var(--max-font-size) * 1px);
+  }
+}
+.overview {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transform: perspective(550px) scaleY(1.5) rotateX(0deg);
+  padding-bottom: 1px;
+  padding-top: 1px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  color: rgb(243, 239, 32);
+}
+p {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 100px;
+  text-shadow: red;
+}
+img {
+  position: relative;
+  left: 140px;
+  bottom: 50px;
+}
+.two {
+}
